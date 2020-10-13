@@ -2,7 +2,7 @@ body{
     background-color: #f7f7f7;
 }
 
-h1,.stu-list{
+ul,h1,.stu-list,h3{
     margin:0;
     padding:0;
 }
@@ -17,12 +17,31 @@ h1 {
     flex-wrap: wrap;
 }
 
-
-
-.stu-list li{
+li{
     list-style: none;
-    margin-left: 10px;
+    margin:10px 5px;
     border: 1px solid black;
     padding:5px;
     background-color: lightgray;
+}
+
+
+
+
+.group-header{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.groupstu-list{
+    display: flex;
+}
+
+.group-item {
+    margin: 10px;
+    border:1px solid black;
+}
+
+.btn {
+    background-color:#ea5455;
 }
