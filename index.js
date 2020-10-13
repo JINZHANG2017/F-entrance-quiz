@@ -11,6 +11,21 @@ fetchData=(url)=> {
       });
   }
 $(function() {
+
+    $(".btn").click(function(){
+        //alert();
+        url="http://localhost:8080/student/shuffle";
+            fetchData(url)
+            .then(result => {
+                console.log(result);
+                parseGroupList(result);
+                
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
     //alert();
     //getData("http://localhost:8080/student/list").then((res)=>console.log(res));
     let url="http://localhost:8080/student/list?isShuffle=0";
@@ -39,6 +54,7 @@ $(function() {
 });
 
 function parseGroupList(result){
+    $(".group-list").empty();
     let total=result.length;
     let num=total/6;
     let rest=total % 6;
@@ -56,6 +72,8 @@ function parseGroupList(result){
     }
 
 }
+
+
 
 
 
