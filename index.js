@@ -17,46 +17,17 @@ $(function() {
     fetchData(url)
     .then(result => {
         console.log(result);
+        for(let i=0;i<result.length;i++){
+            $(".stu-list").append("<li>"+result[i].id+result[i].name+"</li>")
+        }
     })
     .catch(error => {
         console.error(error);
     });
-    alert();
+    //alert();
 });
 
-requestData = (url, postData)=> {
-    return new Promise(function (resolve, reject) {
-          //fetch也是一个Promise
-          fetch(url, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-                  'Content-Encoding': 'identity'  //编码方式
-              },
-              body: JSON.stringify(postData),
-          }).then((response) => response.json())
-              .then((responseData)=> {
-                  resolve(responseData);
-              })
-              .catch((err)=> {
-                  console.log('err', err);
-                  reject(err);
-              });
-          });
-    }
 
-getData = (url)=> {
-    return new Promise(function (resolve, reject) {
-          //fetch也是一个Promise
-                fetch(url).then((response) => response.json())
-              .then((responseData)=> {
-                  resolve(responseData);
-              })
-              .catch((err)=> {
-                  console.log('err', err);
-                  reject(err);
-              });
-          });
-    }
+
 
    

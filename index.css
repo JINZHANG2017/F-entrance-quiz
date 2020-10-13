@@ -1,0 +1,28 @@
+body{
+    background-color: #f7f7f7;
+}
+
+h1,.stu-list{
+    margin:0;
+    padding:0;
+}
+
+h1 {
+    padding-left: 10px;
+}
+.stu-list{
+    margin-top: 20px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.stu-list li{
+    list-style: none;
+    margin-left: 10px;
+    border: 1px solid black;
+    padding:5px;
+    background-color: lightgray;
+}
